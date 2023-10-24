@@ -33,7 +33,7 @@ public class StudentDao {
                 return true; // Return true when deletion is successful
             }
         }
-        return false; // Return false when ID is not found
+        return false;
     }
     public boolean update(int id, int newAge) {
         for (Map<String, StudentDto> stringStudentDtoMap : students) {
@@ -41,11 +41,11 @@ public class StudentDao {
                 StudentDto studentDto = stringStudentDtoMap.get(String.valueOf(id));
                 if (studentDto != null) {
                     studentDto.setAge(newAge);
-                    return true; // Return true when update is successful
+                    return true;
                 }
             }
         }
-        return false; // Return false when ID is not found
+        return false;
     }
     public StudentDto searchById(int id) {
         for (Map<String, StudentDto> stringStudentDtoMap : students) {
@@ -53,6 +53,6 @@ public class StudentDao {
                 return stringStudentDtoMap.get(String.valueOf(id));
             }
         }
-        return null; // Return null when ID is not found
+        return null;
     }
 }
